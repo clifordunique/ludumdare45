@@ -6,11 +6,11 @@ using UnityEngine.Events;
 public class CharacterBrain : MonoBehaviour {
 	public class AbilityUnlockedEvent : UnityEvent<KeyCode> { }
 
-	[SerializeField] protected PositionChecker _groundPositionChecker;
+	[SerializeField] protected PositionChecker     _groundPositionChecker;
+	[SerializeField] protected SidePositionChecker _wallPositionChecker;
 
-	private CharacterAnimator                     animator          { get; set; }
-	private Dictionary<KeyCode, CharacterAbility> allAbilities      { get; } = new Dictionary<KeyCode, CharacterAbility>();
-	private HashSet<CharacterAbility>             unlockedAbilities { get; } = new HashSet<CharacterAbility>();
+	private CharacterAnimator                     animator     { get; set; }
+	private Dictionary<KeyCode, CharacterAbility> allAbilities { get; } = new Dictionary<KeyCode, CharacterAbility>();
 
 	public AbilityUnlockedEvent onAbilityUnlocked { get; } = new AbilityUnlockedEvent();
 
@@ -19,14 +19,14 @@ public class CharacterBrain : MonoBehaviour {
 		GetComponent<Health>().onDead.AddListener(HandleDeath);
 		foreach (var ability in GetComponents<CharacterAbility>()) {
 			allAbilities.Add(ability.keyCode, ability);
-			ability.enabled = false;
+			ability.enabled = ability.initiallyEnabled;
 		}
 	}
 
 	private void HandleDeath() {
 		Debug.Log("Dead");
 		animator.SetDead();
-		foreach (var ability in unlockedAbilities) ability.enabled = false;
+		foreach (var ability in GetComponents<CharacterAbility>()) ability.enabled = false;
 	}
 
 	public void OnTriggerEnter2D(Collider2D other) {
@@ -41,16 +41,16 @@ public class CharacterBrain : MonoBehaviour {
 			return;
 		}
 		var ability = allAbilities[keyCode];
-		if (unlockedAbilities.Contains(ability)) {
+		if (ability.enabled) {
 			Debug.LogWarning($"Ability of type {ability.GetType().Name} was already unlocked.");
 			return;
 		}
-		unlockedAbilities.Add(ability);
 		ability.enabled = true;
 		onAbilityUnlocked.Invoke(keyCode);
 	}
 
 	private void Update() {
-		animator.SetInThAir(!_groundPositionChecker.isValid);
+		animator.SetOnGround(_groundPositionChecker.isValid);
+		animator.SetGripped(!_groundPositionChecker.isValid && _wallPositionChecker.isValid);
 	}
 }

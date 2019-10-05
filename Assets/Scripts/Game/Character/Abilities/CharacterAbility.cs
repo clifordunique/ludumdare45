@@ -4,11 +4,13 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterSheet))]
 [RequireComponent(typeof(CharacterAnimator))]
 public abstract class CharacterAbility : MonoBehaviour {
-
 	[SerializeField] protected KeyCode _keyCode;
+	[SerializeField] protected bool    _initiallyEnabled;
 
-	public    KeyCode        keyCode  => _keyCode;
-	protected CharacterSheet sheet    { get; private set; }
+	public KeyCode keyCode          => _keyCode;
+	public bool    initiallyEnabled => _initiallyEnabled;
+
+	protected CharacterSheet    sheet    { get; private set; }
 	protected CharacterAnimator animator { get; private set; }
 
 	private void Awake() {

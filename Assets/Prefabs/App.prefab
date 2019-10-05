@@ -385,6 +385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transitionUi: {fileID: 1774279773}
+  _deadOutro: {fileID: 11400000, guid: 0cd295322bea153409a313c01da39eb0, type: 2}
 --- !u!1001 &3890851125460158922
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ public class Health : MonoBehaviour {
 
 	private void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.layer != LayerMask.NameToLayer("DamageSource")) return;
+		if (health <= 0) return;
 		health--;
 		if (health <= 0) onDead.Invoke();
 	}

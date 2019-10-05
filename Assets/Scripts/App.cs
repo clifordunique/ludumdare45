@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class App : MonoBehaviour {
 	private static App instance { get; set; }
@@ -17,4 +18,5 @@ public class App : MonoBehaviour {
 			DontDestroyOnLoad(gameObject);
 		}
 	}
+
 }

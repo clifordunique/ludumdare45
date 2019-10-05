@@ -6,6 +6,7 @@ public class MenuManager : MonoBehaviour {
 	[Header("Transition")] [SerializeField] private   TransitionScript _globalIntro;
 
 	private void Awake() {
+		TransitionManager.ClearTransitionsToSkip();
 		_uiController.onStartClicked.AddListener(StartGame);
 	}
 

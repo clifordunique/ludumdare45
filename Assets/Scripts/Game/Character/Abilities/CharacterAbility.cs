@@ -12,7 +12,7 @@ public abstract class CharacterAbility : MonoBehaviour {
 		sheet = GetComponent<CharacterSheet>();
 	}
 
-	private void Update() {
+	private void FixedUpdate() {
 		PlayAbility(Input.GetKey(App.keyboardConfiguration.GetKeyboardKey(_keyCode)));
 	}
 

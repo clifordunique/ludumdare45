@@ -2,13 +2,16 @@
 using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour {
-	[SerializeField] protected MenuUi _uiController;
+	[SerializeField]                        protected MenuUi           _uiController;
+	[Header("Transition")] [SerializeField] private   TransitionScript _globalIntro;
 
 	private void Awake() {
 		_uiController.onStartClicked.AddListener(StartGame);
 	}
 
-	private static void StartGame() {
-		SceneManager.LoadSceneAsync("Game");
+	private void StartGame() {
+		_uiController.Hide();
+		if (_globalIntro) TransitionManager.Play(_globalIntro, () => SceneManager.LoadSceneAsync("Level0"));
+		else SceneManager.LoadSceneAsync("Level0");
 	}
 }

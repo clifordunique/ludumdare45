@@ -2,8 +2,16 @@
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Animator))]
 public class MenuUi : MonoBehaviour {
-	[SerializeField] protected Button _startButton;
+	private static int hideAnimParam { get; } = Animator.StringToHash("Hide");
+
+	[SerializeField] protected Animator _animator;
+	[SerializeField] protected Button   _startButton;
 
 	public UnityEvent onStartClicked => _startButton.onClick;
+
+	public void Hide() {
+		_animator.SetTrigger(hideAnimParam);
+	}
 }

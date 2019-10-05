@@ -8,6 +8,7 @@ public class CharacterAnimator : MonoBehaviour {
 	private static int walkingAnimParam  { get; } = Animator.StringToHash("Walking");
 	private static int climbingAnimParam { get; } = Animator.StringToHash("Climbing");
 	private static int deadAnimParam     { get; } = Animator.StringToHash("Dead");
+	private static int exitAnimParam     { get; } = Animator.StringToHash("Exit");
 
 	[SerializeField] protected Animator _animator;
 
@@ -29,4 +30,6 @@ public class CharacterAnimator : MonoBehaviour {
 	public void SetDead() => _animator.SetTrigger(deadAnimParam);
 
 	public void SetClimbing(bool climbing) => _animator.SetBool(climbingAnimParam, climbing);
+
+	public void SetExit() => _animator.SetTrigger(exitAnimParam);
 }

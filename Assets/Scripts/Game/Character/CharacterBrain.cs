@@ -13,6 +13,7 @@ public class CharacterBrain : MonoBehaviour {
 	private Dictionary<KeyCode, CharacterAbility> allAbilities { get; } = new Dictionary<KeyCode, CharacterAbility>();
 
 	public AbilityUnlockedEvent onAbilityUnlocked { get; } = new AbilityUnlockedEvent();
+	public UnityEvent           onExitReached     { get; } = new UnityEvent();
 
 	private void Awake() {
 		animator = GetComponent<CharacterAnimator>();
@@ -30,9 +31,15 @@ public class CharacterBrain : MonoBehaviour {
 	}
 
 	public void OnTriggerEnter2D(Collider2D other) {
-		if (!other.TryGetComponent<AbilityUnlocker>(out var abilityUnlocker)) return;
-		UnlockAbility(abilityUnlocker.keyCode);
-		abilityUnlocker.Consume();
+		if (other.TryGetComponent<AbilityUnlocker>(out var abilityUnlocker)) {
+			UnlockAbility(abilityUnlocker.keyCode);
+			abilityUnlocker.Consume();
+		}
+		else if (1 << other.gameObject.layer == LayerMask.GetMask("Exit")) {
+			animator.SetExit();
+			foreach (var ability in GetComponents<CharacterAbility>()) ability.enabled = false;
+			onExitReached.Invoke();
+		}
 	}
 
 	private void UnlockAbility(KeyCode keyCode) {
@@ -41,10 +48,7 @@ public class CharacterBrain : MonoBehaviour {
 			return;
 		}
 		var ability = allAbilities[keyCode];
-		if (ability.enabled) {
-			Debug.LogWarning($"Ability of type {ability.GetType().Name} was already unlocked.");
-			return;
-		}
+		if (ability.enabled) return;
 		ability.enabled = true;
 		onAbilityUnlocked.Invoke(keyCode);
 	}

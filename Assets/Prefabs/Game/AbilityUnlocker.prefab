@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3355540906440325282}
   - component: {fileID: 3355540906440325293}
   - component: {fileID: 3355540906440325292}
-  - component: {fileID: 3355540906440325295}
+  - component: {fileID: 2656120221858406254}
   m_Layer: 0
   m_Name: AbilityUnlocker
   m_TagString: Untagged
@@ -69,8 +69,8 @@ MonoBehaviour:
   _animator: {fileID: 3355540906440325293}
   _keyCode: 32
   _visualText: {fileID: 3355540906960669178}
---- !u!70 &3355540906440325295
-CapsuleCollider2D:
+--- !u!58 &2656120221858406254
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -82,9 +82,9 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0010256146, y: -0.022698704}
-  m_Size: {x: 0.9692303, y: 0.6368218}
-  m_Direction: 1
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.36
 --- !u!1 &3355540906960669124
 GameObject:
   m_ObjectHideFlags: 0

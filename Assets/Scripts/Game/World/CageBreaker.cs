@@ -11,10 +11,6 @@ public class CageBreaker : MonoBehaviour {
 	[SerializeField] protected float[]     _stepTimers;
 	[SerializeField] protected AudioClip[] _stepAudios;
 
-	public void Awake() {
-		Debug.Log(_groundTileMap.GetTile(_breakTilePosition)?.name);
-	}
-
 	public void Break() => StartCoroutine(DoBreak());
 
 	private IEnumerator DoBreak() {

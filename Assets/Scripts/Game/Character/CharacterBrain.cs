@@ -50,6 +50,7 @@ public class CharacterBrain : MonoBehaviour {
 		var ability = allAbilities[keyCode];
 		if (ability.enabled) return;
 		ability.enabled = true;
+		AudioManager.Sfx.Play("UnlockAbility");
 		onAbilityUnlocked.Invoke(keyCode);
 	}
 

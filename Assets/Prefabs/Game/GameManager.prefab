@@ -43,4 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b590a99bf4243c5bc9cbdd18b5d4e3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _uiController: {fileID: 0}
   _cageBreaker: {fileID: 0}
+  _character: {fileID: 0}
+  _nextLevelName: 
+  _introScript: {fileID: 0}
+  _outroScript: {fileID: 0}

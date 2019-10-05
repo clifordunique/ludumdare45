@@ -45,20 +45,19 @@ public class AudioManager : MonoBehaviour {
 			}
 		}
 
-		public static void Play(AudioClip clip) {
+		public static AudioSource Play(string clipName) => Play(Resources.Load<AudioClip>($"Audio/Sfx/{clipName}"));
+
+		public static AudioSource Play(AudioClip clip) {
 			var source = instance.sfxSources.FirstOrDefault(t => !t.isPlaying);
 			if (!source) {
 				source = Instantiate(instance._sfxPrefab, instance.transform);
 				instance.sfxSources.Add(source);
 				source.volume = volume;
 			}
-			if (source == null) {
-				Debug.LogError("Problem with instantiation of the sfx prefab");
-				return;
-			}
 			source.clip = clip;
 			source.Stop();
 			source.Play();
+			return source;
 		}
 	}
 }

@@ -25,6 +25,7 @@ public class CharacterBrain : MonoBehaviour {
 
 	private void HandleDeath() {
 		Debug.Log("Dead");
+		animator.SetDead();
 		foreach (var ability in unlockedAbilities) ability.enabled = false;
 	}
 

@@ -1,11 +1,11 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 public class CharacterAnimator : MonoBehaviour {
 	private static int faceLeftAnimParam { get; } = Animator.StringToHash("FaceLeft");
 	private static int inTheAirAnimParam { get; } = Animator.StringToHash("InTheAir");
 	private static int walkingAnimParam  { get; } = Animator.StringToHash("Walking");
+	private static int deadAnimParam     { get; } = Animator.StringToHash("Dead");
 
 	[SerializeField] protected Animator _animator;
 
@@ -22,4 +22,6 @@ public class CharacterAnimator : MonoBehaviour {
 	private void Update() {
 		_animator.SetBool(walkingAnimParam, walkingLeft != walkingRight);
 	}
+
+	public void SetDead() => _animator.SetTrigger(deadAnimParam);
 }

@@ -2,7 +2,9 @@
 
 public class CharacterMoveLeft : CharacterAbility {
 	protected override void PlayAbility(bool keyDown) {
+		animator.walkingLeft = keyDown;
 		if (!keyDown) return;
+		animator.SetFaceLeft(true);
 		transform.position += sheet.speed * Time.deltaTime * Vector3.left;
 	}
 }

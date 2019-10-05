@@ -5,6 +5,9 @@ TextureImporter:
   - first:
       213: -1355270939746514160
     second: world_0
+  - first:
+      213: -7394375637179823380
+    second: world_1
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -115,8 +118,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0afb21f5defb4749ba9051fef324f10
+      spriteID: ec2c4facc286b4c448654391042fd3ea
       internalID: -1355270939746514160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5404a9eeb9f0df4a8ecd58343e24c3e
+      internalID: -7394375637179823380
       vertices: []
       indices: 
       edges: []

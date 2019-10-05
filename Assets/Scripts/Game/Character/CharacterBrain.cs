@@ -2,19 +2,30 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(CharacterAnimator))]
 public class CharacterBrain : MonoBehaviour {
 	public class AbilityUnlockedEvent : UnityEvent<KeyCode> { }
 
+	[SerializeField] protected PositionChecker _groundPositionChecker;
+
+	private CharacterAnimator                     animator          { get; set; }
 	private Dictionary<KeyCode, CharacterAbility> allAbilities      { get; } = new Dictionary<KeyCode, CharacterAbility>();
 	private HashSet<CharacterAbility>             unlockedAbilities { get; } = new HashSet<CharacterAbility>();
 
 	public AbilityUnlockedEvent onAbilityUnlocked { get; } = new AbilityUnlockedEvent();
 
 	private void Awake() {
+		animator = GetComponent<CharacterAnimator>();
+		GetComponent<Health>().onDead.AddListener(HandleDeath);
 		foreach (var ability in GetComponents<CharacterAbility>()) {
 			allAbilities.Add(ability.keyCode, ability);
 			ability.enabled = false;
 		}
+	}
+
+	private void HandleDeath() {
+		Debug.Log("Dead");
+		foreach (var ability in unlockedAbilities) ability.enabled = false;
 	}
 
 	public void OnTriggerEnter2D(Collider2D other) {
@@ -36,5 +47,9 @@ public class CharacterBrain : MonoBehaviour {
 		unlockedAbilities.Add(ability);
 		ability.enabled = true;
 		onAbilityUnlocked.Invoke(keyCode);
+	}
+
+	private void Update() {
+		animator.SetInThAir(!_groundPositionChecker.isValid);
 	}
 }

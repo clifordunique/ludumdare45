@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: FinalOutro
   m_EditorClassIdentifier: 
   _steps:
-  - _audio: {fileID: 8300000, guid: 27aad5e102f4f8445bad4405d6464b90, type: 3}
-    _subtitles: This is the subtitle
+  - _audio: {fileID: 8300000, guid: 503951f66e337d44386361d593fa59c7, type: 3}
+    _subtitles: Told ya!
+  - _audio: {fileID: 8300000, guid: 46e43aaa2be1d514292476be4e5997ea, type: 3}
+    _subtitles: Oh, go to hell. I will eat a hamburger.

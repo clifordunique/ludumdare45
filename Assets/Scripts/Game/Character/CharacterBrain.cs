@@ -8,9 +8,14 @@ public class CharacterBrain : MonoBehaviour {
 
 	[SerializeField] protected PositionChecker     _groundPositionChecker;
 	[SerializeField] protected SidePositionChecker _wallPositionChecker;
+	[SerializeField] protected AudioClip           _clipOnUnlockAbility;
+	[SerializeField] protected AudioClip           _clipOnDead;
+	[SerializeField] protected AudioClip           _clipOnExit;
 
 	private CharacterAnimator                     animator     { get; set; }
 	private Dictionary<KeyCode, CharacterAbility> allAbilities { get; } = new Dictionary<KeyCode, CharacterAbility>();
+
+	private bool exited { get; set; }
 
 	public AbilityUnlockedEvent onAbilityUnlocked { get; } = new AbilityUnlockedEvent();
 	public UnityEvent           onExitReached     { get; } = new UnityEvent();
@@ -28,6 +33,7 @@ public class CharacterBrain : MonoBehaviour {
 		Debug.Log("Dead");
 		animator.SetDead();
 		foreach (var ability in GetComponents<CharacterAbility>()) ability.enabled = false;
+		AudioManager.Sfx.Play(_clipOnDead);
 	}
 
 	public void OnTriggerEnter2D(Collider2D other) {
@@ -35,9 +41,11 @@ public class CharacterBrain : MonoBehaviour {
 			UnlockAbility(abilityUnlocker.keyCode);
 			abilityUnlocker.Consume();
 		}
-		else if (1 << other.gameObject.layer == LayerMask.GetMask("Exit")) {
+		else if (!exited && 1 << other.gameObject.layer == LayerMask.GetMask("Exit")) {
+			exited = true;
 			animator.SetExit();
 			foreach (var ability in GetComponents<CharacterAbility>()) ability.enabled = false;
+			AudioManager.Sfx.Play(_clipOnExit);
 			onExitReached.Invoke();
 		}
 	}
@@ -50,7 +58,7 @@ public class CharacterBrain : MonoBehaviour {
 		var ability = allAbilities[keyCode];
 		if (ability.enabled) return;
 		ability.enabled = true;
-		AudioManager.Sfx.Play("UnlockAbility");
+		AudioManager.Sfx.Play(_clipOnUnlockAbility);
 		onAbilityUnlocked.Invoke(keyCode);
 	}
 

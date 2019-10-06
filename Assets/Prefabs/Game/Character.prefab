@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 3494574039046764083}
   - component: {fileID: 3494574039046764095}
   - component: {fileID: 892522482501828722}
+  - component: {fileID: 2178430287306918300}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -237,6 +238,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _groundPositionChecker: {fileID: 3494574039861583786}
   _wallPositionChecker: {fileID: 3339939827939433200}
+  _clipOnUnlockAbility: {fileID: 8300000, guid: 376055555a0082341ab741a41ddbeb63,
+    type: 3}
+  _clipOnDead: {fileID: 8300000, guid: 1adef8adb9198ba468464b6087ab4bd6, type: 3}
+  _clipOnExit: {fileID: 8300000, guid: 70197c128a717a7489acdfd954170f5e, type: 3}
 --- !u!114 &3494574039046764072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,6 +288,7 @@ MonoBehaviour:
   _groundPositionChecker: {fileID: 3494574039861583786}
   _wallPositionChecker: {fileID: 3339939827939433200}
   _cooldown: 0.5
+  _jumpAudioClip: {fileID: 8300000, guid: 59b24434269615541ba334a7d5389d4c, type: 3}
 --- !u!114 &3494574039046764095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,6 +320,22 @@ MonoBehaviour:
   _initiallyEnabled: 0
   _rigidBody2D: {fileID: 3494574039046764087}
   _wallPositionChecker: {fileID: 3339939827939433200}
+  _climbAudio: {fileID: 8300000, guid: e21aeea939830534dbf51379378f270b, type: 3}
+  _delayBetweenClimbAudios: 2
+--- !u!114 &2178430287306918300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3494574039046764075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0f3acec620e4188ae5ecc57c993ed6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _keyCode: 120
+  _initiallyEnabled: 0
 --- !u!1 &3494574039246018451
 GameObject:
   m_ObjectHideFlags: 0

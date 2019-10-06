@@ -269,11 +269,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e494befca2583fe4987c1d3684d70350, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -367,11 +367,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e953ea8286014c9abcc49430b1e2f219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _musicSource: {fileID: 7040152256369595012}
-  _musicVolume: 1
-  _sfxPrefab: {fileID: 8706078020494980741, guid: ce0a0d09c6e2b90448939d1e6e79efda,
+  _audioSourcePrefab: {fileID: 8706078020494980741, guid: ce0a0d09c6e2b90448939d1e6e79efda,
     type: 3}
-  _sfxVolume: 1
+  _musicSource: {fileID: 7040152256369595012}
+  _musicVolume: 0.5
+  _sfxVolume: 0.75
+  _voiceVolume: 1
 --- !u!114 &510122116
 MonoBehaviour:
   m_ObjectHideFlags: 0

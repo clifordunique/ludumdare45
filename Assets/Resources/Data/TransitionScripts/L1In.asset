@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: L1In
   m_EditorClassIdentifier: 
   _steps:
-  - _audio: {fileID: 8300000, guid: 27aad5e102f4f8445bad4405d6464b90, type: 3}
-    _subtitles: This is the subtitle
+  - _audio: {fileID: 8300000, guid: 0693c93c51920544bb8d2836512cd68a, type: 3}
+    _subtitles: Here, in a brand new cage and I casted my spell again.
+  - _audio: {fileID: 8300000, guid: e5bb16bd4bcd4ae42b0d00f97179a7c0, type: 3}
+    _subtitles: You won't escape your destiny!

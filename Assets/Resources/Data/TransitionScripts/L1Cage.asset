@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20674c83969142638c350222b40bcdae, type: 3}
-  m_Name: L1Out
+  m_Name: L1Cage
   m_EditorClassIdentifier: 
   _steps:
-  - _audio: {fileID: 8300000, guid: 27aad5e102f4f8445bad4405d6464b90, type: 3}
-    _subtitles: This is the subtitle
+  - _audio: {fileID: 8300000, guid: 761f9793060799c42a16776f3c6b90ec, type: 3}
+    _subtitles: Oh, come on!

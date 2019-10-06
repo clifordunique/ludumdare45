@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameSceneManager : MonoBehaviour {
@@ -8,40 +9,41 @@ public class GameSceneManager : MonoBehaviour {
 	[SerializeField] protected string         _nextLevelName;
 
 	[Header("Transitions")] [SerializeField] private TransitionScript _introScript;
+	[SerializeField]                         private TransitionScript _cageScript;
 	[SerializeField]                         private TransitionScript _outroScript;
 
-	private bool lastLevel => string.IsNullOrEmpty(_nextLevelName);
+	private bool lastLevel  => string.IsNullOrEmpty(_nextLevelName);
+	private bool readyToEnd { get; set; }
 
 	private void Awake() {
-		if (_introScript && !TransitionManager.IsToSkip(_introScript)) TransitionManager.Play(_introScript, StartLevel);
-		else StartLevel();
+		TransitionManager.Play(_introScript, StartLevel);
 		_character.onExitReached.AddListener(HandleEndLevel);
 		_character.GetComponent<Health>().onDead.AddListener(HandleDeath);
+		if (lastLevel) _character.onAbilityUnlocked.AddListener(t => readyToEnd |= t == KeyCode.X);
 	}
 
 	private void StartLevel() {
-		if (_introScript) TransitionManager.SkipInTheFuture(_introScript);
 		_uiController.StartLevel();
 		_cageBreaker.Break();
+		if (_cageScript) StartCoroutine(PlayCageScript());
+	}
+
+	private IEnumerator PlayCageScript() {
+		yield return new WaitForSeconds(6);
+		TransitionManager.Play(_cageScript);
 	}
 
 	private void HandleEndLevel() {
 		_uiController.EndLevel();
-		if (_outroScript && !TransitionManager.IsToSkip(_outroScript)) TransitionManager.Play(_outroScript, LoadNextLevel);
-		else LoadNextLevel();
-	}
-
-	private void LoadNextLevel() {
-		if (_outroScript) TransitionManager.SkipInTheFuture(_outroScript);
-		SceneManager.LoadSceneAsync(_nextLevelName);
+		TransitionManager.Play(_outroScript, () => SceneManager.LoadSceneAsync(_nextLevelName));
 	}
 
 	private void HandleDeath() {
-		if (lastLevel) {
+		if (lastLevel && readyToEnd) {
 			TransitionManager.Play(_outroScript, () => SceneManager.LoadSceneAsync("GameOver"));
 		}
 		else {
-			TransitionManager.PlayDeadOutro( () => SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name));
+			TransitionManager.PlayDeadOutro(() => SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name));
 		}
 	}
 }

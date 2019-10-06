@@ -13,5 +13,11 @@ MonoBehaviour:
   m_Name: L0In
   m_EditorClassIdentifier: 
   _steps:
-  - _audio: {fileID: 8300000, guid: 27aad5e102f4f8445bad4405d6464b90, type: 3}
-    _subtitles: This is the subtitle
+  - _audio: {fileID: 8300000, guid: 4da8884a0db22e344ba7c63079666a74, type: 3}
+    _subtitles: Muhaha! I got you!
+  - _audio: {fileID: 8300000, guid: 11da57d042d020c44ba6983bf8282c29, type: 3}
+    _subtitles: Just a few more kilos, and then...!
+  - _audio: {fileID: 8300000, guid: 6c5c6420ca6dcbd4aab824e9e99e8783, type: 3}
+    _subtitles: You won't escape, little bird, I casted a spell on you...
+  - _audio: {fileID: 8300000, guid: 578ad502db674e74badb343f23243dc7, type: 3}
+    _subtitles: You will never be able to move again! Muhaha!

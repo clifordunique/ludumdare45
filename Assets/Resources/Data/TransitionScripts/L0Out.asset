@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: L0Out
   m_EditorClassIdentifier: 
   _steps:
-  - _audio: {fileID: 8300000, guid: 27aad5e102f4f8445bad4405d6464b90, type: 3}
-    _subtitles: This is the subtitle
+  - _audio: {fileID: 8300000, guid: 147e109e04a737c45aebabee7738646e, type: 3}
+    _subtitles: You want to escape, huh?
+  - _audio: {fileID: 8300000, guid: 2b1a924dd6a1ec54b8aed5c9796fb501, type: 3}
+    _subtitles: You wont get far, I know where you live!

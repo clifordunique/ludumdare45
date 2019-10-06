@@ -1799,6 +1799,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: f0b291e8c7807784096614bc0d234e60,
         type: 2}
+    - target: {fileID: 2366484859609917000, guid: 9cab7091a0e55cb4aa7e56f7c32bf809,
+        type: 3}
+      propertyPath: _cageScript
+      value: 
+      objectReference: {fileID: 11400000, guid: a0cfccfc43fba744490a58f1a4f2524d,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cab7091a0e55cb4aa7e56f7c32bf809, type: 3}
 --- !u!1001 &3355540906580874266
@@ -2030,6 +2036,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339076066790548730, guid: 73c7c03862fa1254ba5b0dd78e3430c7,
+        type: 3}
+      propertyPath: _musicVolume
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1774279772, guid: 73c7c03862fa1254ba5b0dd78e3430c7, type: 3}
       propertyPath: m_LocalPosition.z

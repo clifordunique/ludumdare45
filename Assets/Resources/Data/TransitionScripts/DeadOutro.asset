@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: DeadOutro
   m_EditorClassIdentifier: 
   _steps:
-  - _audio: {fileID: 8300000, guid: 27aad5e102f4f8445bad4405d6464b90, type: 3}
-    _subtitles: This is the subtitle
+  - _audio: {fileID: 8300000, guid: a8bcd83f8af25474cb25a4e8c7672541, type: 3}
+    _subtitles: Hah! Was it worth it?
+  - _audio: {fileID: 8300000, guid: 9432d9c2bd4cef349958701c47d13418, type: 3}
+    _subtitles: Luckily, I have another bird...

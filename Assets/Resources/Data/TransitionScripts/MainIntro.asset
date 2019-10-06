@@ -13,5 +13,12 @@ MonoBehaviour:
   m_Name: MainIntro
   m_EditorClassIdentifier: 
   _steps:
-  - _audio: {fileID: 8300000, guid: 27aad5e102f4f8445bad4405d6464b90, type: 3}
-    _subtitles: This is the subtitle
+  - _audio: {fileID: 8300000, guid: 660b2ba3f9123974e84f72dae3f7c828, type: 3}
+    _subtitles: In a land far far away, there was a wizard.
+  - _audio: {fileID: 8300000, guid: 0a3b2e365ace66f498bf91915f5833b7, type: 3}
+    _subtitles: His only objective was to eat chicken legs!
+  - _audio: {fileID: 8300000, guid: d4274db224f9eb34593674de57c2b726, type: 3}
+    _subtitles: He would capture birds and slaughter them as soon as they were big
+      enough.
+  - _audio: {fileID: 8300000, guid: 3b42ef69204cdcc419ca9f224173045d, type: 3}
+    _subtitles: Until he captured the poor Tubizo...

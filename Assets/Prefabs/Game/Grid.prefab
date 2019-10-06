@@ -68,13 +68,10 @@ MonoBehaviour:
   _foregroundSteps:
   - {fileID: 11400000, guid: 2d78744341e09234e94eb08934ca52c8, type: 2}
   _stepTimers:
-  - 3
-  - 1
-  - 1
-  _stepAudios:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - 0.4
+  - 2.2
+  - 1.2
+  _cageBreakAudio: {fileID: 8300000, guid: 16c76ff23b4c96e459e2dd7d47d6d464, type: 3}
 --- !u!1 &3849600953052548604
 GameObject:
   m_ObjectHideFlags: 0

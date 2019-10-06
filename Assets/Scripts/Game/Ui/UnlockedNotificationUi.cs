@@ -9,7 +9,8 @@ public class UnlockedNotificationUi : MonoBehaviour {
 		{KeyCode.Q, "Move left"},
 		{KeyCode.P, "See the whole level"},
 		{KeyCode.Space, "Jump"},
-		{KeyCode.Z, "Climb walls close to you"}
+		{KeyCode.Z, "Climb walls close to you"},
+		{KeyCode.X, "Fly"}
 	};
 
 	[SerializeField] protected TMPro.TMP_Text _text;

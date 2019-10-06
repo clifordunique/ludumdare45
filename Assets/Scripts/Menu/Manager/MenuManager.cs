@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour {
@@ -8,14 +9,16 @@ public class MenuManager : MonoBehaviour {
 	private void Awake() {
 		TransitionManager.ClearTransitionsToSkip();
 
-		_uiController.SetActiveKeyboardLayout(App.keyboardConfiguration);
-		_uiController.SetAudioVolumes(AudioManager.Music.volume, AudioManager.Sfx.volume, AudioManager.Voice.volume);
-
 		_uiController.onStartClicked.AddListener(StartGame);
 		_uiController.onKeyboardLayoutChange.AddListener(SetKeyboardLayout);
 		_uiController.onMusicVolumeChanged.AddListener(t => AudioManager.Music.volume = t);
 		_uiController.onSfxVolumeChanged.AddListener(t => AudioManager.Sfx.volume = t);
 		_uiController.onVoiceVolumeChanged.AddListener(t => AudioManager.Voice.volume = t);
+	}
+
+	private void Start() {
+		_uiController.SetActiveKeyboardLayout(App.keyboardConfiguration);
+		_uiController.SetAudioVolumes(AudioManager.Music.volume, AudioManager.Sfx.volume, AudioManager.Voice.volume);
 	}
 
 	private void SetKeyboardLayout(KeyboardConfiguration config) {

@@ -22,8 +22,8 @@ namespace Game.World {
 			transform.position += Time.deltaTime * _speed * _movementVector;
 		}
 
-		public void OnTriggerEnter2D(Collider2D other) {
-			if (other.gameObject.layer != LayerMask.NameToLayer("UnlockAbility")) Destroy(gameObject);
+		public void OnCollisionEnter2D() {
+			Destroy(gameObject);
 		}
 	}
 }

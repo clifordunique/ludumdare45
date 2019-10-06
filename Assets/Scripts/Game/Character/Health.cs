@@ -2,7 +2,7 @@
 using UnityEngine.Events;
 
 public class Health : MonoBehaviour {
-	[SerializeField] private int _maxHealth;
+	[SerializeField] private int _maxHealth = 1;
 
 	public UnityEvent onDead { get; } = new UnityEvent();
 

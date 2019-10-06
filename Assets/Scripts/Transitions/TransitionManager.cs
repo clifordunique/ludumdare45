@@ -9,10 +9,13 @@ public class TransitionManager : MonoBehaviour {
 	[SerializeField] protected TransitionUi     _transitionUi;
 	[SerializeField] protected TransitionScript _deadOutro;
 
+	private Coroutine coroutine { get; set; }
+
 	public static void Play(TransitionScript script, Action callback = null) {
 		if (!script || instance.transitionsToSkip.Contains(script)) callback?.Invoke();
 		else {
-			instance.StartCoroutine(instance.DoPlay(script, callback));
+			if (instance.coroutine != null) instance.StopCoroutine(instance.coroutine);
+			instance.coroutine = instance.StartCoroutine(instance.DoPlay(script, callback));
 			instance.transitionsToSkip.Add(script);
 		}
 	}

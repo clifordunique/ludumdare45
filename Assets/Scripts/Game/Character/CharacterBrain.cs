@@ -30,7 +30,6 @@ public class CharacterBrain : MonoBehaviour {
 	}
 
 	private void HandleDeath() {
-		Debug.Log("Dead");
 		animator.SetDead();
 		foreach (var ability in GetComponents<CharacterAbility>()) ability.enabled = false;
 		AudioManager.Sfx.Play(_clipOnDead);
@@ -41,7 +40,7 @@ public class CharacterBrain : MonoBehaviour {
 			UnlockAbility(abilityUnlocker.keyCode);
 			abilityUnlocker.Consume();
 		}
-		else if (!exited && 1 << other.gameObject.layer == LayerMask.GetMask("Exit")) {
+		else if (!exited && other.gameObject.layer == LayerMask.NameToLayer("Exit")) {
 			exited = true;
 			animator.SetExit();
 			foreach (var ability in GetComponents<CharacterAbility>()) ability.enabled = false;

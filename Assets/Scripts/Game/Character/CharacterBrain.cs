@@ -45,6 +45,9 @@ public class CharacterBrain : MonoBehaviour {
 			animator.SetExit();
 			foreach (var ability in GetComponents<CharacterAbility>()) ability.enabled = false;
 			AudioManager.Sfx.Play(_clipOnExit);
+			var rb2 = GetComponent<Rigidbody2D>();
+			rb2.gravityScale = 0;
+			rb2.velocity = Vector2.zero;
 			onExitReached.Invoke();
 		}
 	}

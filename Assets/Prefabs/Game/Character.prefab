@@ -412,7 +412,6 @@ MonoBehaviour:
   _rigidBody2D: {fileID: 3494574039046764087}
   _groundPositionChecker: {fileID: 3494574039861583786}
   _wallPositionChecker: {fileID: 3339939827939433200}
-  _cooldown: 0.5
   _jumpAudioClip: {fileID: 8300000, guid: 59b24434269615541ba334a7d5389d4c, type: 3}
 --- !u!114 &3494574039046764095
 MonoBehaviour:
@@ -459,7 +458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0f3acec620e4188ae5ecc57c993ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _keyCode: 120
+  _keyCode: 101
   _initiallyEnabled: 0
 --- !u!114 &3494574037992834473
 MonoBehaviour:

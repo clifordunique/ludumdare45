@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad446d7ed7094ddfbb70e60041b8e6dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _keyboardConfiguration: {fileID: 11400000, guid: 8fddd5ff3d8578e418cc851945477703,
+  _keyboardConfiguration: {fileID: 11400000, guid: 50840c2fc0b891345922c0ee71c2e594,
     type: 2}
 --- !u!82 &7040152256369595012
 AudioSource:
@@ -394,10 +394,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 394236786}
     m_Modifications:
-    - target: {fileID: 8011720748732994654, guid: b0aad3fc6338ca445b1413bd2a79da86,
+    - target: {fileID: 7797751307364656711, guid: b0aad3fc6338ca445b1413bd2a79da86,
         type: 3}
-      propertyPath: m_Name
-      value: Text
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797751307364656711, guid: b0aad3fc6338ca445b1413bd2a79da86,
+        type: 3}
+      propertyPath: m_textAlignment
+      value: 514
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797751307364656711, guid: b0aad3fc6338ca445b1413bd2a79da86,
+        type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797751307364656711, guid: b0aad3fc6338ca445b1413bd2a79da86,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797751307364656711, guid: b0aad3fc6338ca445b1413bd2a79da86,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797751307364656711, guid: b0aad3fc6338ca445b1413bd2a79da86,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797751307364656711, guid: b0aad3fc6338ca445b1413bd2a79da86,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797751307364656711, guid: b0aad3fc6338ca445b1413bd2a79da86,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1677850735710820767, guid: b0aad3fc6338ca445b1413bd2a79da86,
         type: 3}
@@ -504,45 +539,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7797751307364656711, guid: b0aad3fc6338ca445b1413bd2a79da86,
+    - target: {fileID: 8011720748732994654, guid: b0aad3fc6338ca445b1413bd2a79da86,
         type: 3}
-      propertyPath: m_fontSize
-      value: 36
-      objectReference: {fileID: 0}
-    - target: {fileID: 7797751307364656711, guid: b0aad3fc6338ca445b1413bd2a79da86,
-        type: 3}
-      propertyPath: m_textAlignment
-      value: 514
-      objectReference: {fileID: 0}
-    - target: {fileID: 7797751307364656711, guid: b0aad3fc6338ca445b1413bd2a79da86,
-        type: 3}
-      propertyPath: m_text
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7797751307364656711, guid: b0aad3fc6338ca445b1413bd2a79da86,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7797751307364656711, guid: b0aad3fc6338ca445b1413bd2a79da86,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7797751307364656711, guid: b0aad3fc6338ca445b1413bd2a79da86,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7797751307364656711, guid: b0aad3fc6338ca445b1413bd2a79da86,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7797751307364656711, guid: b0aad3fc6338ca445b1413bd2a79da86,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
+      propertyPath: m_Name
+      value: Text
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0aad3fc6338ca445b1413bd2a79da86, type: 3}

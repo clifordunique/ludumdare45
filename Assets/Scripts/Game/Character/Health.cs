@@ -22,7 +22,9 @@ public class Health : MonoBehaviour {
 		onDead.Invoke();
 		var position = transform.position;
 		transform.position = position.With(y: position.y.RoundDown() + .5f);
-		GetComponent<Rigidbody2D>().gravityScale = 0;
+		var rb2 = GetComponent<Rigidbody2D>();
+		rb2.gravityScale = 0;
+		rb2.velocity = Vector2.zero;
 		GetComponent<Collider2D>().enabled = false;
 	}
 }

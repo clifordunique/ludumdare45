@@ -10,7 +10,7 @@ public class UnlockedNotificationUi : MonoBehaviour {
 		{KeyCode.P, "See the whole level"},
 		{KeyCode.Space, "Jump"},
 		{KeyCode.Z, "Climb walls"},
-		{KeyCode.X, "Fly"},
+		{KeyCode.E, "Fly"},
 		{KeyCode.F, "Shoot seeds"}
 	};
 

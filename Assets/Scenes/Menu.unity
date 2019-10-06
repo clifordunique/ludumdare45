@@ -3015,17 +3015,17 @@ PrefabInstance:
     - target: {fileID: 7797751307364656711, guid: b0aad3fc6338ca445b1413bd2a79da86,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 5
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7797751307364656711, guid: b0aad3fc6338ca445b1413bd2a79da86,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7797751307364656711, guid: b0aad3fc6338ca445b1413bd2a79da86,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7797751307364656711, guid: b0aad3fc6338ca445b1413bd2a79da86,
         type: 3}
@@ -3040,7 +3040,7 @@ PrefabInstance:
     - target: {fileID: 7797751307364656711, guid: b0aad3fc6338ca445b1413bd2a79da86,
         type: 3}
       propertyPath: m_text
-      value: Compo
+      value: A Compo by Rolly
       objectReference: {fileID: 0}
     - target: {fileID: 7797751307364656711, guid: b0aad3fc6338ca445b1413bd2a79da86,
         type: 3}

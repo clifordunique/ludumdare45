@@ -20,7 +20,7 @@ public class GameSceneManager : MonoBehaviour {
 		TransitionManager.Play(_introScript, StartLevel);
 		_character.onExitReached.AddListener(HandleEndLevel);
 		_character.GetComponent<Health>().onDead.AddListener(HandleDeath);
-		if (lastLevel) _character.onAbilityUnlocked.AddListener(t => readyToEnd |= t == KeyCode.X);
+		if (lastLevel) _character.onAbilityUnlocked.AddListener(t => readyToEnd |= t == KeyCode.E);
 	}
 
 	private void StartLevel() {
@@ -36,12 +36,12 @@ public class GameSceneManager : MonoBehaviour {
 
 	private void HandleEndLevel() {
 		_uiController.EndLevel();
-		TransitionManager.Play(_outroScript, () => SceneManager.LoadSceneAsync(_nextLevelName));
+		TransitionManager.Play(_outroScript, () => SceneManager.LoadSceneAsync(_nextLevelName), 1f);
 	}
 
 	private void HandleDeath() {
 		if (lastLevel && readyToEnd) {
-			TransitionManager.Play(_outroScript, () => SceneManager.LoadSceneAsync("GameOver"));
+			TransitionManager.Play(_outroScript, () => SceneManager.LoadSceneAsync("GameOver"), .4f);
 		}
 		else {
 			TransitionManager.PlayDeadOutro(() => SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name));

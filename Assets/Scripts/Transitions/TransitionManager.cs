@@ -11,8 +11,10 @@ public class TransitionManager : MonoBehaviour {
 
 	private Coroutine coroutine { get; set; }
 
-	public static void Play(TransitionScript script, Action callback = null) {
-		if (!script || instance.transitionsToSkip.Contains(script)) callback?.Invoke();
+	public static void Play(TransitionScript script, Action callback = null, float delayBeforeCallbackOnNoPlay = 0f) {
+		if (!script || instance.transitionsToSkip.Contains(script)) {
+			if (callback != null) instance.StartCoroutine(WaitAndCall(callback, delayBeforeCallbackOnNoPlay));
+		}
 		else {
 			if (instance.coroutine != null) instance.StopCoroutine(instance.coroutine);
 			instance.coroutine = instance.StartCoroutine(instance.DoPlay(script, callback));
@@ -20,7 +22,12 @@ public class TransitionManager : MonoBehaviour {
 		}
 	}
 
-	public static void PlayDeadOutro(Action callback = null) => Play(instance._deadOutro, callback);
+	private static IEnumerator WaitAndCall(Action callback, float delay) {
+		yield return new WaitForSeconds(delay);
+		callback.Invoke();
+	}
+
+	public static void PlayDeadOutro(Action callback = null) => Play(instance._deadOutro, callback, .5f);
 
 	private HashSet<TransitionScript> transitionsToSkip { get; } = new HashSet<TransitionScript>();
 

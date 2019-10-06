@@ -13,6 +13,7 @@ public class DemonBrain : MonoBehaviour {
 	[SerializeField] protected SidePositionChecker _wallChecker;
 	[SerializeField] protected SidePositionChecker _platformEndChecker;
 	[SerializeField] protected float               _pauseTime = 2;
+	[SerializeField] protected AudioClip           _clipOnDead;
 
 	private bool  directionRight { get; set; } = true;
 	private float pauseStartTime { get; set; } = -100;
@@ -28,8 +29,9 @@ public class DemonBrain : MonoBehaviour {
 
 	private void HandleDeath() {
 		_animator.SetTrigger(deadAnimParam);
+		GetComponent<Rigidbody2D>().gravityScale = 0;
 		foreach (var thisColliders in GetComponentsInChildren<Collider2D>()) thisColliders.enabled = false;
-		//AudioManager.Sfx.Play(_clipOnDead);
+		AudioManager.Sfx.Play(_clipOnDead);
 	}
 
 	private void Update() {

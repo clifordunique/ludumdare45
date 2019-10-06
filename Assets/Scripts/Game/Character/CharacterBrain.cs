@@ -62,7 +62,7 @@ public class CharacterBrain : MonoBehaviour {
 	}
 
 	private void Update() {
-		animator.SetOnGround(_groundPositionChecker.isValid);
-		animator.SetGripped(!_groundPositionChecker.isValid && _wallPositionChecker.isValid);
+		animator.onGround = _groundPositionChecker.isValid;
+		animator.gripped = !_groundPositionChecker.isValid && _wallPositionChecker.isValid;
 	}
 }

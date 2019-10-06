@@ -9,27 +9,42 @@ public class CharacterAnimator : MonoBehaviour {
 	private static int climbingAnimParam { get; } = Animator.StringToHash("Climbing");
 	private static int deadAnimParam     { get; } = Animator.StringToHash("Dead");
 	private static int exitAnimParam     { get; } = Animator.StringToHash("Exit");
+	private static int shootAnimParam    { get; } = Animator.StringToHash("Shoot");
 
 	[SerializeField] protected Animator _animator;
 
 	public bool walkingRight { get; set; }
 	public bool walkingLeft  { get; set; }
 
+	public bool faceLeft {
+		get => _animator.GetBool(faceLeftAnimParam);
+		set => _animator.SetBool(faceLeftAnimParam, value);
+	}
+
+	public bool gripped {
+		get => _animator.GetBool(grippedAnimParam);
+		set => _animator.SetBool(grippedAnimParam, value);
+	}
+
+	public bool onGround {
+		get => _animator.GetBool(onGroundAnimParam);
+		set => _animator.SetBool(onGroundAnimParam, value);
+	}
+
+	public bool climbing {
+		get => _animator.GetBool(climbingAnimParam);
+		set => _animator.SetBool(climbingAnimParam, value);
+	}
+
 	private void Reset() {
 		if (!_animator) _animator = GetComponent<Animator>();
 	}
-
-	public void SetFaceLeft(bool left) => _animator.SetBool(faceLeftAnimParam, left);
-	public void SetOnGround(bool onGround) => _animator.SetBool(onGroundAnimParam, onGround);
-	public void SetGripped(bool gripped) => _animator.SetBool(grippedAnimParam, gripped);
 
 	private void Update() {
 		_animator.SetBool(walkingAnimParam, walkingLeft != walkingRight);
 	}
 
 	public void SetDead() => _animator.SetTrigger(deadAnimParam);
-
-	public void SetClimbing(bool climbing) => _animator.SetBool(climbingAnimParam, climbing);
-
 	public void SetExit() => _animator.SetTrigger(exitAnimParam);
+	public void SetShoot() => _animator.SetTrigger(shootAnimParam);
 }

@@ -371,8 +371,8 @@ MonoBehaviour:
     type: 3}
   _musicSource: {fileID: 7040152256369595012}
   _musicVolume: 0.5
-  _sfxVolume: 0.75
-  _voiceVolume: 1
+  _sfxVolume: 0.7
+  _voiceVolume: 0.7
 --- !u!114 &510122116
 MonoBehaviour:
   m_ObjectHideFlags: 0

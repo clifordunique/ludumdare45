@@ -413,6 +413,7 @@ MonoBehaviour:
   _wallChecker: {fileID: 4774354563173367971}
   _platformEndChecker: {fileID: 4774354562570998356}
   _pauseTime: 4
+  _clipOnDead: {fileID: 8300000, guid: fecc0cb552b8eae43af7de2c986950f3, type: 3}
 --- !u!1 &4774354562813162431
 GameObject:
   m_ObjectHideFlags: 0

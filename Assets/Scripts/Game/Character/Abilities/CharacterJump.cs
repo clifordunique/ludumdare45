@@ -15,7 +15,6 @@ public class CharacterJump : CharacterAbility {
 	}
 
 	protected override void PlayAbility(bool keyDown) {
-		animator.SetOnGround(_groundPositionChecker.isValid);
 		if (!keyDown) return;
 		if (cooldownCounter + _cooldown > Time.time) return;
 		if (!_groundPositionChecker.isValid && !_wallPositionChecker.isValid) return;

@@ -15,13 +15,13 @@ public class CharacterClimb : CharacterAbility {
 	}
 
 	protected override void PlayAbility(bool keyDown) {
-		animator.SetClimbing(_wallPositionChecker.isValid && keyDown);
+		animator.climbing = _wallPositionChecker.isValid && keyDown;
 		_rigidBody2D.gravityScale = _wallPositionChecker.isValid ? 0 : 1;
 		if (!_wallPositionChecker.isValid) return;
 		if (_rigidBody2D.velocity != Vector2.zero) _rigidBody2D.velocity = Vector2.zero;
-		if (!_wallPositionChecker.isLeftValid || !_wallPositionChecker.isRightValid) animator.SetFaceLeft(_wallPositionChecker.isLeftValid);
+		if (!_wallPositionChecker.isLeftValid || !_wallPositionChecker.isRightValid) animator.faceLeft = _wallPositionChecker.isLeftValid;
 		if (!keyDown) return;
-		animator.SetGripped(_wallPositionChecker.isValid);
+		animator.gripped = _wallPositionChecker.isValid;
 		transform.position += Time.deltaTime * sheet.speed * Vector3.up;
 		TryPlayClimbAudio();
 	}

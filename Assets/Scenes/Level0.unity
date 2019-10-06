@@ -14743,6 +14743,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 720d293e12cbc6943a4528fc9a522536,
         type: 2}
+    - target: {fileID: 2366484859609917000, guid: 9cab7091a0e55cb4aa7e56f7c32bf809,
+        type: 3}
+      propertyPath: _cageScriptCooldown
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cab7091a0e55cb4aa7e56f7c32bf809, type: 3}
 --- !u!1001 &3355540906580874266
@@ -14836,11 +14841,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3494574039046764075, guid: 5ad355f21ac03e84785c06058363451d,
-        type: 3}
-      propertyPath: m_Name
-      value: Character
-      objectReference: {fileID: 0}
     - target: {fileID: 3494574039046764074, guid: 5ad355f21ac03e84785c06058363451d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14895,6 +14895,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494574039046764075, guid: 5ad355f21ac03e84785c06058363451d,
+        type: 3}
+      propertyPath: m_Name
+      value: Character
       objectReference: {fileID: 0}
     - target: {fileID: 3494574039046764084, guid: 5ad355f21ac03e84785c06058363451d,
         type: 3}
@@ -14988,6 +14993,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6628791548690562370, guid: 4fc2628502112744d8ed483c0e73b545,
+        type: 3}
+      propertyPath: m_fontColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6628791548690562370, guid: 4fc2628502112744d8ed483c0e73b545,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4019779004658873752, guid: 4fc2628502112744d8ed483c0e73b545,
         type: 3}
       propertyPath: m_Name
@@ -15112,16 +15127,6 @@ PrefabInstance:
       propertyPath: _text
       value: 
       objectReference: {fileID: 445146532}
-    - target: {fileID: 6628791548690562370, guid: 4fc2628502112744d8ed483c0e73b545,
-        type: 3}
-      propertyPath: m_fontColor.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6628791548690562370, guid: 4fc2628502112744d8ed483c0e73b545,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fc2628502112744d8ed483c0e73b545, type: 3}
 --- !u!114 &4019779005362599441 stripped
@@ -15287,6 +15292,16 @@ PrefabInstance:
       propertyPath: _orthographicSize
       value: 7.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7318187567770618342, guid: af1a94bb03e8ae646bf2bcd3cba134ac,
+        type: 3}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 1098036109}
+    - target: {fileID: 7318187567079447523, guid: af1a94bb03e8ae646bf2bcd3cba134ac,
+        type: 3}
+      propertyPath: orthographic size
+      value: 4.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7318187567770618343, guid: af1a94bb03e8ae646bf2bcd3cba134ac,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -15297,20 +15312,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -2.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7318187567770618342, guid: af1a94bb03e8ae646bf2bcd3cba134ac,
-        type: 3}
-      propertyPath: _target
-      value: 
-      objectReference: {fileID: 1098036109}
     - target: {fileID: 7318187567079447532, guid: af1a94bb03e8ae646bf2bcd3cba134ac,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7318187567079447523, guid: af1a94bb03e8ae646bf2bcd3cba134ac,
-        type: 3}
-      propertyPath: orthographic size
-      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af1a94bb03e8ae646bf2bcd3cba134ac, type: 3}

@@ -324,11 +324,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2057435517}
     m_Modifications:
-    - target: {fileID: 4774354562809970771, guid: 11d7a15f3211c6d49996c235773b1017,
-        type: 3}
-      propertyPath: m_Name
-      value: Demon2
-      objectReference: {fileID: 0}
     - target: {fileID: 4774354562809970772, guid: 11d7a15f3211c6d49996c235773b1017,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -383,6 +378,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774354562809970771, guid: 11d7a15f3211c6d49996c235773b1017,
+        type: 3}
+      propertyPath: m_Name
+      value: Demon2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11d7a15f3211c6d49996c235773b1017, type: 3}
@@ -24946,11 +24946,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2057435517}
     m_Modifications:
-    - target: {fileID: 4774354562809970771, guid: 11d7a15f3211c6d49996c235773b1017,
-        type: 3}
-      propertyPath: m_Name
-      value: Demon3
-      objectReference: {fileID: 0}
     - target: {fileID: 4774354562809970772, guid: 11d7a15f3211c6d49996c235773b1017,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25005,6 +25000,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774354562809970771, guid: 11d7a15f3211c6d49996c235773b1017,
+        type: 3}
+      propertyPath: m_Name
+      value: Demon3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11d7a15f3211c6d49996c235773b1017, type: 3}
@@ -25151,6 +25151,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 51aaf4fb84d0552449d94ba7577cd6ab,
         type: 2}
+    - target: {fileID: 2366484859609917000, guid: 9cab7091a0e55cb4aa7e56f7c32bf809,
+        type: 3}
+      propertyPath: _cageScriptCooldown
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cab7091a0e55cb4aa7e56f7c32bf809, type: 3}
 --- !u!1001 &3355540906580874266
@@ -25244,11 +25249,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3494574039046764075, guid: 5ad355f21ac03e84785c06058363451d,
-        type: 3}
-      propertyPath: m_Name
-      value: Character
-      objectReference: {fileID: 0}
     - target: {fileID: 3494574039046764074, guid: 5ad355f21ac03e84785c06058363451d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25303,6 +25303,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494574039046764075, guid: 5ad355f21ac03e84785c06058363451d,
+        type: 3}
+      propertyPath: m_Name
+      value: Character
       objectReference: {fileID: 0}
     - target: {fileID: 3494574039046764095, guid: 5ad355f21ac03e84785c06058363451d,
         type: 3}
@@ -25396,6 +25401,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6628791548690562370, guid: 4fc2628502112744d8ed483c0e73b545,
+        type: 3}
+      propertyPath: m_fontColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6628791548690562370, guid: 4fc2628502112744d8ed483c0e73b545,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4019779004658873752, guid: 4fc2628502112744d8ed483c0e73b545,
         type: 3}
       propertyPath: m_Name
@@ -25520,16 +25535,6 @@ PrefabInstance:
       propertyPath: _text
       value: 
       objectReference: {fileID: 445146532}
-    - target: {fileID: 6628791548690562370, guid: 4fc2628502112744d8ed483c0e73b545,
-        type: 3}
-      propertyPath: m_fontColor.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6628791548690562370, guid: 4fc2628502112744d8ed483c0e73b545,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fc2628502112744d8ed483c0e73b545, type: 3}
 --- !u!114 &4019779005362599441 stripped
@@ -25551,11 +25556,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2057435517}
     m_Modifications:
-    - target: {fileID: 4774354562809970771, guid: 11d7a15f3211c6d49996c235773b1017,
-        type: 3}
-      propertyPath: m_Name
-      value: Demon
-      objectReference: {fileID: 0}
     - target: {fileID: 4774354562809970772, guid: 11d7a15f3211c6d49996c235773b1017,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25610,6 +25610,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774354562809970771, guid: 11d7a15f3211c6d49996c235773b1017,
+        type: 3}
+      propertyPath: m_Name
+      value: Demon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11d7a15f3211c6d49996c235773b1017, type: 3}

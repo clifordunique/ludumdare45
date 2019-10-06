@@ -8,9 +8,10 @@ public class GameSceneManager : MonoBehaviour {
 	[SerializeField] protected CharacterBrain _character;
 	[SerializeField] protected string         _nextLevelName;
 
-	[Header("Transitions")] [SerializeField] private TransitionScript _introScript;
-	[SerializeField]                         private TransitionScript _cageScript;
-	[SerializeField]                         private TransitionScript _outroScript;
+	[Header("Transitions")] [SerializeField] protected TransitionScript _introScript;
+	[SerializeField]                         protected TransitionScript _cageScript;
+	[SerializeField]                         protected float            _cageScriptCooldown = 4;
+	[SerializeField]                         protected TransitionScript _outroScript;
 
 	private bool lastLevel  => string.IsNullOrEmpty(_nextLevelName);
 	private bool readyToEnd { get; set; }
@@ -29,7 +30,7 @@ public class GameSceneManager : MonoBehaviour {
 	}
 
 	private IEnumerator PlayCageScript() {
-		yield return new WaitForSeconds(6);
+		yield return new WaitForSeconds(_cageScriptCooldown);
 		TransitionManager.Play(_cageScript);
 	}
 
